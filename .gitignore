@@ -8,6 +8,10 @@ target/
 # ---> Java
 *.class
 
+xsd-tmp
+
+generated
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
