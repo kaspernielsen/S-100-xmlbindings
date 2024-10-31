@@ -34,7 +34,20 @@
         <url>https://github.com/iho-ohi/S-100-xmlbindings</url>
     </scm>
 
+
+    <repositories>
+        <repository>
+            <id>grad</id>
+            <url>https://rnavlab.gla-rad.org/mvn/repository/grad/</url>
+        </repository>
+        <repository>
+            <id>grad-snapshots</id>
+            <url>https://rnavlab.gla-rad.org/mvn/repository/grad-snapshots/</url>
+        </repository>
+    </repositories>
+    
     <modules>
+        <module>s-100</module>
         <module>s-124</module>
     </modules>
 

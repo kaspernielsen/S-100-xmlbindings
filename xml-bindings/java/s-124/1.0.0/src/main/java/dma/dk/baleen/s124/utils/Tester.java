@@ -17,8 +17,8 @@ package dma.dk.baleen.s124.utils;
 
 import java.util.List;
 
-import _int.iho.s124._1.Dataset;
-import _int.iho.s124.s100.gml.profiles._5_0.AbstractGMLType;
+import _int.iho.s100.xmlbindings.s100.gml.profiles._5_0.AbstractGMLType;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.Dataset;
 import jakarta.xml.bind.JAXBException;
 
 /**

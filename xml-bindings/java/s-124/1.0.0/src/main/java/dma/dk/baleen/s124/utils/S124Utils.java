@@ -17,9 +17,9 @@
 package dma.dk.baleen.s124.utils;
 
 import static java.util.Objects.requireNonNull;
-
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Field;
@@ -35,19 +35,19 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import _int.iho.s124._1.Dataset;
-import _int.iho.s124._1.NAVWARNAreaAffected;
-import _int.iho.s124._1.NAVWARNPart;
-import _int.iho.s124._1.S100TruncatedDate;
-import _int.iho.s124._1.TextPlacement;
-import _int.iho.s124._1.impl.DatasetImpl;
-import _int.iho.s124._1.impl.S100TruncatedDateImpl;
-import _int.iho.s124.s100.gml.base._5_0.AbstractFeatureType;
-import _int.iho.s124.s100.gml.base._5_0.S100SpatialAttributeType;
-import _int.iho.s124.s100.gml.base._5_0.impl.CurvePropertyImpl;
-import _int.iho.s124.s100.gml.base._5_0.impl.PointPropertyImpl;
-import _int.iho.s124.s100.gml.base._5_0.impl.SurfacePropertyImpl;
-import _int.iho.s124.s100.gml.profiles._5_0.AbstractGMLType;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.AbstractFeatureType;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.S100SpatialAttributeType;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.S100TruncatedDate;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.impl.CurvePropertyImpl;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.impl.PointPropertyImpl;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.impl.S100TruncatedDateImpl;
+import _int.iho.s100.xmlbindings.s100.gml.base._5_0.impl.SurfacePropertyImpl;
+import _int.iho.s100.xmlbindings.s100.gml.profiles._5_0.AbstractGMLType;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.Dataset;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.NAVWARNAreaAffected;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.NAVWARNPart;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.TextPlacement;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.impl.DatasetImpl;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.JAXBIntrospector;

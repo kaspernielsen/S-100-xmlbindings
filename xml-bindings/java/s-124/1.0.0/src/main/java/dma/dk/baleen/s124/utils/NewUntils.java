@@ -18,8 +18,8 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-import _int.iho.s124._1.Dataset;
-import _int.iho.s124._1.impl.DatasetImpl;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.Dataset;
+import _int.iho.s100.xmlbindings.s124.v1_0_0.impl.DatasetImpl;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;

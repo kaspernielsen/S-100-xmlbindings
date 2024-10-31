@@ -18,6 +18,9 @@
             schemaLocation="../xsd/S-124-1.0.0.xsd"
             node="/xs:schema" choiceContentProperty="true">
 
+        <schemaBindings>
+            <package name="_int.iho.s100.xmlbindings.s124.v1_0_0"/>
+        </schemaBindings>
         <!-- Avoid the JAXBElements on dataset members -->
 
     </bindings>
@@ -26,7 +29,7 @@
             schemaLocation="https://schemas.s100dev.net/schemas/S100/5.0.0/S100GML/20220620/s100gmlbase.xsd"
             node="/xs:schema">
         <schemaBindings>
-            <package name="_int.iho.s124.s100.gml.base._5_0"/>
+            <package name="_int.iho.s100.xmlbindings.s100.gml.base._5_0"/>
         </schemaBindings>
 
         <!-- rename the numDerivativeInterior element -->
@@ -39,7 +42,7 @@
             schemaLocation="https://schemas.s100dev.net/schemas/S100/5.0.0/S100GML/20220620/S100_gmlProfile.xsd"
             node="/xs:schema">
         <schemaBindings>
-            <package name="_int.iho.s124.s100.gml.profiles._5_0"/>
+            <package name="_int.iho.s100.xmlbindings.s100.gml.profiles._5_0"/>
         </schemaBindings>
     </bindings>
 
