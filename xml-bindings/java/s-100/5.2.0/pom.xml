@@ -10,10 +10,17 @@
         <relativePath>..</relativePath>
     </parent>
     <artifactId>s100-5_2_0-xml-bindings</artifactId>
-
+    <version>0.0.10</version>
     <packaging>jar</packaging>
     <name>S-100 5.2.0 XML Bindings</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.locationtech.jts.io</groupId>
+            <artifactId>jts-io-common</artifactId>
+            <version>1.19.0</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

@@ -3,8 +3,8 @@ package dma.dk.baleen.s124.utils;
 import java.math.BigInteger;
 import java.time.LocalDate;
 
-import _int.iho.s100.catalog._5_0.S100CompliancyCategory;
-import _int.iho.s100.catalog._5_0.S100ProductSpecification;
+import _int.iho.s100.catalog._5_2.S100CompliancyCategory;
+import _int.iho.s100.catalog._5_2.S100ProductSpecification;
 
 /**
  * The IHO GI Registry Information Class.

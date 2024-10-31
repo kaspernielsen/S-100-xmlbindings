@@ -64,13 +64,10 @@
     </build>
 
     <dependencies>
-
-
-        <!-- The S-100 Catalogue -->
         <dependency>
-            <groupId>org.grad.eNav</groupId>
-            <artifactId>S100Catalogue</artifactId>
-            <version>0.5.13</version>
+            <groupId>org.iho.s100.xml-bindings</groupId>
+            <artifactId>s100-5_2_0-xml-bindings</artifactId>
+            <version>0.0.10</version>
         </dependency>
 
     </dependencies>

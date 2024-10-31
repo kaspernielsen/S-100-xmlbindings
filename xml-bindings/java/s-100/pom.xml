@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <name>S-100 Modules Pom</name>
     <description>S-100 Modules POM</description>
+    
+    <version>0.0.10</version>
 
     <modules>
         <module>5.2.0</module>

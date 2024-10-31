@@ -34,18 +34,6 @@
         <url>https://github.com/iho-ohi/S-100-xmlbindings</url>
     </scm>
 
-
-    <repositories>
-        <repository>
-            <id>grad</id>
-            <url>https://rnavlab.gla-rad.org/mvn/repository/grad/</url>
-        </repository>
-        <repository>
-            <id>grad-snapshots</id>
-            <url>https://rnavlab.gla-rad.org/mvn/repository/grad-snapshots/</url>
-        </repository>
-    </repositories>
-    
     <modules>
         <module>s-100</module>
         <module>s-124</module>
@@ -80,13 +68,7 @@
     </properties>
 
     <dependencies>
-        <!-- The S-100 Catalogue -->
-        <dependency>
-            <groupId>org.grad.eNav</groupId>
-            <artifactId>S100Catalogue</artifactId>
-            <version>0.5.13</version>
-        </dependency>
-
+ 
         <!-- JAXB Plugin Dependencies -->
         <dependency>
             <groupId>org.jvnet.jaxb</groupId>
@@ -105,12 +87,6 @@
         </dependency>
 
         <!-- Test Dependencies -->
-        <dependency>
-            <groupId>org.locationtech.jts.io</groupId>
-            <artifactId>jts-io-common</artifactId>
-            <version>1.19.0</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
