@@ -12,11 +12,12 @@
         <xjc:javaType name="java.time.LocalDate" xmlType="xs:date" adapter="org.grad.eNav.s100.adapters.DateAdapter"/>
         <xjc:javaType name="java.time.LocalDate" xmlType="gco:Date_Type" adapter="org.grad.eNav.s100.adapters.DateAdapter"/>
         <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="org.grad.eNav.s100.adapters.DateTimeAdapter"/>
+     
         <xjc:simple/>
     </globalBindings>
 
     <bindings
-            schemaLocation="../xsd/S100/5.2.0/S100SE/20240415/Part15.xsd"
+            schemaLocation="../xsd/s-100/5.2.0/S100SE/20240415/Part15.xsd"
             node="/xs:schema">
         <schemaBindings>
             <package name="_int.iho.s100.catalog._5_2"/>
@@ -24,7 +25,7 @@
     </bindings>
 
     <bindings
-            schemaLocation="../xsd/S100/5.2.0/S100Catalog/20240415/S100_ExchangeCatalogue.xsd"
+            schemaLocation="../xsd/s-100/5.2.0/S100Catalog/20240415/S100_ExchangeCatalogue.xsd"
             node="/xs:schema">
         <schemaBindings>
             <package name="_int.iho.s100.catalog._5_2"/>

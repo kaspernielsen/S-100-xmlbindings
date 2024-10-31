@@ -11,11 +11,11 @@
     </parent>
     <artifactId>xml-bindingings-s100-pom</artifactId>
     <packaging>pom</packaging>
-    <name>S100 Modules pom</name>
+    <name>S-100 Modules Pom</name>
     <description>S-100 Modules POM</description>
 
     <modules>
-        <module>5.0.0</module>
+        <module>5.2.0</module>
 <!--        <module>1.5.0</module>-->
     </modules>
 </project>

@@ -12,7 +12,7 @@
     <artifactId>s124-1_0_0-xml-bindings</artifactId>
 
     <packaging>jar</packaging>
-    <name>Niord-Base S-124 XML Bindings</name>
+    <name>S-124 1.0.0 XML Bindings</name>
 
     <build>
         <plugins>

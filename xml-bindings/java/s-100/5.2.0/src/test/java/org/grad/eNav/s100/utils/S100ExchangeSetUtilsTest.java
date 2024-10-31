@@ -437,21 +437,27 @@ class S100ExchangeSetUtilsTest {
      */
     @Test
     void testMarchallS125() throws JAXBException {
-        String xml = S100ExchangeSetUtils.marshalS100ExchangeSetCatalogue(this.s100ExchangeCatalogue);
+        Locale l = Locale.getDefault();
+        try {
+            Locale.setDefault(Locale.US);
+            String xml = S100ExchangeSetUtils.marshalS100ExchangeSetCatalogue(this.s100ExchangeCatalogue);
 
-        // Assert the XML is not empty and seems valid
-        assertNotNull(xml);
+            // Assert the XML is not empty and seems valid
+            assertNotNull(xml);
 
-        // The marshalling operation ofter messes up the namespace order so
-        // we might as well remove it before we continue with the one-to-one
-        // matching
-        String s100ExchangeSetXmlWithoutNamespaces = this.s100ExchangeSetXml
-                .replaceAll("S100_ExchangeCatalogue .+>","S100_ExchangeCatalogue>")
-                .replaceAll("ns\\d+:","");
-        String xmlWithoutNamespaces = xml
-                .replaceAll("S100_ExchangeCatalogue .+>","S100_ExchangeCatalogue>")
-                .replaceAll("ns\\d+:","");
-        assertEquals(s100ExchangeSetXmlWithoutNamespaces, xmlWithoutNamespaces);
+            // The marshalling operation ofter messes up the namespace order so
+            // we might as well remove it before we continue with the one-to-one
+            // matching
+            String s100ExchangeSetXmlWithoutNamespaces = this.s100ExchangeSetXml
+                    .replaceAll("S100_ExchangeCatalogue .+>","S100_ExchangeCatalogue>")
+                    .replaceAll("ns\\d+:","");
+            String xmlWithoutNamespaces = xml
+                    .replaceAll("S100_ExchangeCatalogue .+>","S100_ExchangeCatalogue>")
+                    .replaceAll("ns\\d+:","");
+            assertEquals(s100ExchangeSetXmlWithoutNamespaces, xmlWithoutNamespaces);
+        } finally {
+            Locale.setDefault(l);
+        }
     }
 
     /**

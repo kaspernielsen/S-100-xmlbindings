@@ -5,29 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.iho.s100.xml-bindings</groupId>
-        <artifactId>xml-bindingings-s124-pom</artifactId>
+        <artifactId>xml-bindingings-s100-pom</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
-    <artifactId>s124-1_0_0-xml-bindings</artifactId>
+    <artifactId>s100-5_2_0-xml-bindings</artifactId>
 
     <packaging>jar</packaging>
-    <name>Niord-Base S-124 XML Bindings</name>
-
-    <repositories>
-        <repository>
-            <id>grad</id>
-            <url>https://rnavlab.gla-rad.org/mvn/repository/grad/</url>
-        </repository>
-        <repository>
-            <id>grad-snapshots</id>
-            <url>https://rnavlab.gla-rad.org/mvn/repository/grad-snapshots/</url>
-        </repository>
-    </repositories>
+    <name>S-100 5.2.0 XML Bindings</name>
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.jvnet.jaxb</groupId>
                 <artifactId>jaxb-maven-plugin</artifactId>
@@ -44,17 +32,17 @@
                     <bindingIncludes>
                         <include>xjb/bindings.xjb</include>
                     </bindingIncludes>
-
                     <schemaIncludes>
-                        <include>xsd/S-124.xsd</include>
+                        <include>
+                            xsd/s-100/5.2.0/S100Catalog/20240415/S100_ExchangeCatalogue.xsd</include>
                     </schemaIncludes>
-
                     <generateDirectory>${basedir}/src/main/generated/</generateDirectory>
                     <cleanPackageDirectories>true</cleanPackageDirectories>
                     <args>
                         <arg>-Xsimplify</arg>
                         <arg>-Xannotate</arg>
                         <arg>-Xsetters</arg>
+                        <argument>-XautoNameResolution</argument>
                     </args>
                     <plugins>
                         <plugin>
@@ -72,49 +60,6 @@
                     </plugins>
                 </configuration>
             </plugin>
-
-            <!--
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-xsd</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>
-                                        ${project.basedir}/../../../../schemas/s-124/1.0.0</directory>
-                                    <includes>
-                                        <include>**/*.xsd</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
--->
         </plugins>
-
-
     </build>
-
-    <dependencies>
-
-
-        <!-- The S-100 Catalogue -->
-        <dependency>
-            <groupId>org.grad.eNav</groupId>
-            <artifactId>S100Catalogue</artifactId>
-            <version>0.5.13</version>
-        </dependency>
-
-    </dependencies>
-
 </project>
