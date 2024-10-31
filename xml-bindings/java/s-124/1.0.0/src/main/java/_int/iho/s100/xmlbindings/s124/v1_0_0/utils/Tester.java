@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dma.dk.baleen.s124.utils;
+package _int.iho.s100.xmlbindings.s124.v1_0_0.utils;
 
 import java.util.List;
 

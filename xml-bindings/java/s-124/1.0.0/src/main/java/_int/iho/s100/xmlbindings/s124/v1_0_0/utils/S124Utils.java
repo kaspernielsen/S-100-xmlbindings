@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dma.dk.baleen.s124.utils;
+package _int.iho.s100.xmlbindings.s124.v1_0_0.utils;
 
 import static java.util.Objects.requireNonNull;
 import java.beans.IntrospectionException;
