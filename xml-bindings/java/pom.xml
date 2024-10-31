@@ -54,7 +54,7 @@
         <version.maven.jakarta.xml.bind-api>4.0.1</version.maven.jakarta.xml.bind-api>
 
         <!-- Maven Plugin Versions -->
-        <maven.min.version>3.9.0</maven.min.version>
+        <maven.min.version>3.6.0</maven.min.version>
         <version.plugin.clean>3.2.0</version.plugin.clean>
         <version.plugin.bundle>5.1.7</version.plugin.bundle>
         <version.plugin.compiler>3.13.0</version.plugin.compiler>
