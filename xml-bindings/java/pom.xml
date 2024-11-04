@@ -37,6 +37,8 @@
     <modules>
         <module>s-100</module>
         <module>s-124</module>
+        <module>s-125</module>
+        <module>s-201</module>
     </modules>
 
     <properties>
