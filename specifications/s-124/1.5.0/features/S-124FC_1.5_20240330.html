@@ -1,0 +1,5219 @@
+<html lang="en-US" xmlns:S100FC="http://www.iho.int/S100FC/5.2" xmlns:S100Base="http://www.iho.int/S100Base/5.0" xmlns:S100CI="http://www.iho.int/S100CI/5.0" xmlns:S100CD="http://www.iho.int/S100CD/5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+      body {
+      
+      font-size: 8pt;
+      font-family: arial;
+	  margin: 0;
+      }
+	  .wrapper {
+	  display: flex;
+	  }
+      .main-content {
+	  flex: 1;
+	  margin-left:15%;
+	  padding:5px 5px;
+	  height:1000px;
+      }
+
+     table {
+      width: 85%;
+      table-layout: auto;
+      border-style: none;
+	  border-collapse: collapse;
+      }
+	  th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: left;
+	}
+
+      td {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      vertical-align: top;
+	  border-style: none;
+      }
+	  tr { 
+	  border: solid;
+	  border-width: 2px 0;
+	  }
+     .values {
+		max-height: 40em;
+		overflow: auto;
+      }
+     .referencedBy {
+		max-height: 40em;
+		overflow: auto;
+      }
+     .values table {
+      width: 100%;
+      table-layout: auto;
+      border-style: none;
+	  border-collapse: collapse;
+      }
+
+      .values td {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      vertical-align: top;
+	  border-style: none;
+      }
+	  .values tr { 
+	  border-style: none;
+	  }
+     .identity table {
+      width: 100%;
+      table-layout: auto;
+      border-style: none;
+	  border-collapse: collapse;
+      }
+
+      .identity td {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      vertical-align: top;
+	  border-style: none;
+      }
+	  .identity tr { 
+	  border-style: none;
+	  }
+	  .identity th { 
+	  vertical-align: top;
+	  }
+	  .identity-col1 {
+	  width:15%;
+	  }
+	  .identity-col2 {
+	  width:85%;
+	  }
+	  .attributes { 
+	  background-color:#00ffff;
+	  }
+	  .complex { 
+	  background-color:#42e2f4;
+	  }
+     .associations a{
+  float: none;
+  padding: 2px 5px;
+  display: inline-block;
+  text-align: left;
+      }
+     .associations table {
+      width: 100%;
+      table-layout: auto;
+      border-style: none;
+	  border-collapse: collapse;
+      }
+	  .associations tr { 
+	border-top: 1px dotted blue;
+	  }
+	.associationClass {
+	  width: 30%;
+	}
+	  .associationClass tr { 
+      border-style: none;
+	  border-collapse: collapse;
+	  }
+	.associationClass th {
+	  width: 30%;
+	}
+	.links {
+	  width: 70%;
+	}
+    
+	  .informAssoc { 
+	  background-color:#c1fb98;
+	  }
+	  .inform { 
+	  background-color:#98FB98;
+	  }
+	  .featAssoc { 
+	  background-color:#c4f9ff;
+	  }
+	  .feature { 
+	  background-color:#B0E0E5;
+	  }
+	.valueCode {
+	  width: 10%;
+	}
+	.valueLabel {
+	  width: 90%;
+	}	  
+
+	.leftnav {
+		margin: 0;
+		padding: 0;
+		
+		flex: 0 0 15%;
+		background-color: #f1f1f1;
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+	}
+
+	.leftnav a {
+		display: block;
+		color: #000;
+		padding: 4px 15px 4px 4px;
+		min-width: 33%;
+		text-decoration: none;
+		font-size: 8pt;
+	}
+
+	.leftnav a.active {
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	.leftnav a:hover:not(.active) {
+		background-color: #555;
+		color: white;
+	}
+.submenu {
+  margin-left:5%;
+  width: 95%;
+}
+.dropdown {
+  overflow: hidden;
+  width: 100%;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: 2px 10px;
+  margin: 0;
+  background-color: inherit;
+  font-family: inherit;
+  width: 100%;
+  text-decoration: none;
+  font-size: 8pt;
+}
+.dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: green;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 2px 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.attlinks a {
+  display: inline-block;
+  padding: 2px 5px;
+}
+.bottomBuffer {
+  width: 100%;
+  height: 20em;
+}
+				</style>
+<title>Navigational Warnings</title>
+</head>
+<body>
+<div class="wrapper">
+<div class="leftnav"><a href="#simple">Simple Attributes</a><div class="submenu">
+<div class="dropdown"><button class="dropbtn">agencyResponsibleForProduction<i class="fa fa-caret-down"></i></button><div class="dropdown-content attributes"><a href="#agencyResponsibleForProduction">agencyResponsibleForProduction</a><a href="#atoNNumber">atoNNumber</a><a href="#cancellationDate">cancellationDate</a><a href="#chartNumber">chartNumber</a><a href="#chartPlanNumber">chartPlanNumber</a><a href="#chartPublicationIdentifier">chartPublicationIdentifier</a><a href="#countryName">countryName</a><a href="#dateEnd">dateEnd</a><a href="#dateStart">dateStart</a><a href="#dateTimeEnd">dateTimeEnd</a><a href="#dateTimeStart">dateTimeStart</a><a href="#editionDate">editionDate</a><a href="#editionNumber">editionNumber</a><a href="#eNCName">eNCName</a><a href="#featureIdentifier">featureIdentifier</a></div>
+</div>
+<div class="dropdown"><button class="dropbtn">featureObjectIdentifier<i class="fa fa-caret-down"></i></button><div class="dropdown-content attributes"><a href="#featureObjectIdentifier">featureObjectIdentifier</a><a href="#fileLocator">fileLocator</a><a href="#fileReference">fileReference</a><a href="#headline">headline</a><a href="#internationalChartAffected">internationalChartAffected</a><a href="#intService">intService</a><a href="#language">language</a><a href="#lastNoticeDate">lastNoticeDate</a><a href="#localityIdentifier">localityIdentifier</a><a href="#name">name</a><a href="#nameOfSeries">nameOfSeries</a><a href="#nameUsage">nameUsage</a><a href="#navwarnTypeDetails">navwarnTypeDetails</a><a href="#navwarnTypeGeneral">navwarnTypeGeneral</a><a href="#noMessageOnHand">noMessageOnHand</a></div>
+</div>
+<div class="dropdown"><button class="dropbtn">publicationAffected<i class="fa fa-caret-down"></i></button><div class="dropdown-content attributes"><a href="#publicationAffected">publicationAffected</a><a href="#publicationTime">publicationTime</a><a href="#referenceCategory">referenceCategory</a><a href="#restriction">restriction</a><a href="#scaleMinimum">scaleMinimum</a><a href="#text">text</a><a href="#textOffsetBearing">textOffsetBearing</a><a href="#textOffsetDistance">textOffsetDistance</a><a href="#textRotation">textRotation</a><a href="#textType">textType</a><a href="#updateNumber">updateNumber</a><a href="#warningIdentifier">warningIdentifier</a><a href="#warningNumber">warningNumber</a><a href="#warningType">warningType</a><a href="#year">year</a></div>
+</div>
+</div><a href="#informAssoc">Information Associations</a><a href="#featAssoc">Feature Associations</a><a href="#complex">Complex Attributes</a><a href="#inform">Information Types</a><a href="#features">Feature Types</a><div class="submenu">
+<div class="dropdown"><button class="dropbtn">NAVWARNAreaAffected<i class="fa fa-caret-down"></i></button><div class="dropdown-content feature"><a href="#NAVWARNAreaAffected">NAVWARNAreaAffected</a><a href="#NAVWARNPart">NAVWARNPart</a><a href="#TextPlacement">TextPlacement</a></div>
+</div>
+</div>
+<div class="bottomBuffer"></div>
+</div>
+<div class="main-content">
+<h1>Feature Catalogue: Navigational Warnings</h1>versionNumber: 1.5, versionDate: 2024-03-30<h1>Attributes</h1>
+<h2 id="simple">Simple Attributes</h2>
+<div class="attributes">
+<table>
+<caption>Simple Attributes</caption>
+<tr>
+<th>Identity</th>
+<th>Type</th>
+<th>Values</th>
+<th>UsedBy</th>
+</tr>
+<tr id="agencyResponsibleForProduction">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>agencyResponsibleForProduction</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Agency Responsible for Production</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>AGENCY</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Identifies the agency which produced the data.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="atoNNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>atoNNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>AtoN Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Identifier from a list of Aids to Navigation publication, such as List of Lights.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureReference">featureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="cancellationDate">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>cancellationDate</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Cancellation Date</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Date and time of cancelling a notice or warning.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>dateTime</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="chartNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>chartNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Chart Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Chart number. Note, can be either paper chart number or ENC file name.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#chartAffected">chartAffected</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="chartPlanNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>chartPlanNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Chart Plan Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Plan number when a chart has more than one panel.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#chartAffected">chartAffected</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="chartPublicationIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>chartPublicationIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Chart Publication Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Identifier for the chart or publication (using the MRN format).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>URN</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#affectedChartPublications">affectedChartPublications</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="countryName">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>countryName</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Country Name</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The name of a nation.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="dateEnd">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>dateEnd</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Date End</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>DATEND</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The latest date on which an object (for example a buoy) will be present.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>The Date End should be encoded using 4 digits for the calendar year (YYYY), 2 digits for the month (MM) (for example April = 04) and 2 digits for the day (DD). When no specific month and/or day is required/known, indication of the month and/or day is omitted, and replaced with dashes (-). When no specific year is required (that is, the event or date range ends at the same time each year) the following two cases may be considered:- same day each year: ----MMDD- same month each year: ----MM--This conforms to ISO 8601: 2004. Date End indicates the latest date of an event or the end of a date range. It is used to indicate the end of a fixed date range, the end of a periodic date range, or the removal or cancellation of a feature at a specific date in the future.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>S100_TruncatedDate</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#fixedDateRange">fixedDateRange</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="dateStart">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>dateStart</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Date Start</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>DATSTA</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The earliest date on which an object (for example a buoy) will be present.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>The Date Start should be encoded using 4 digits for the calendar year (YYYY), 2 digits for the month (MM) (for example April = 04) and 2 digits for the day (DD). When no specific month and/or day is required/known, indication of the month and/or day is omitted, and replaced with dashes (-). When no specific year is required (that is, the event or date range ends at the same time each year) the following two cases may be considered:- same day each year: ----MMDD- same month each year: ----MM--This conforms to ISO 8601: 2004. Date Start indicates the earliest date of an event or the start of a date range. It is used to indicate the start of a fixed date range, the start of a periodic date range, or the deployment or implementation of a feature at a specific date in the future.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>S100_TruncatedDate</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#fixedDateRange">fixedDateRange</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="dateTimeEnd">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>dateTimeEnd</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Date Time End</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The end of a time range, expressed in Universal Time Coordinated (UTC).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>19850412T183059 denotes 18 hours, 30 minutes, and 59 seconds on 12 April 1985.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>dateTime</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#dateTimeRange">dateTimeRange</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="dateTimeStart">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>dateTimeStart</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Date Time Start</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The beginning of a time range, expressed in Universal Time Coordinated (UTC).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>19850412T183059 denotes 18 hours, 30 minutes, and 59 seconds on 12 April 1985.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>dateTime</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#dateTimeRange">dateTimeRange</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="editionDate">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>editionDate</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Edition Date</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Date of publishing for example of a publication, chart, or product.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>date</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#chartAffected">chartAffected</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="editionNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>editionNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Edition Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Edition of the ENC being referenced.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#eNCFeatureReference">eNCFeatureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="eNCName">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>eNCName</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>ENC Name</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The name of the ENC dataset. This is generally indicated in the dataset metadata (discovery or embedded) and will usually be the same as the name of the dataset file, possibly without the file extension component.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#eNCFeatureReference">eNCFeatureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="featureIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>featureIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Feature Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>An identifier referencing an object or feature that is external to the dataset, expressed in Uniform Resource Name (URN) format.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>URN</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureReference">featureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="featureObjectIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>featureObjectIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Feature Object Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>FOID of the referenced ENC object.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#eNCFeatureReference">eNCFeatureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="fileLocator">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>fileLocator</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>File Locator</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The location of a fragment of text or other information in a support file.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>Application schemas must describe how the associated file is identified. The associated file will commonly be named in a file reference co-attribute of the same complex attribute. Each DCEG must specify requirements for the format of the associated file and the semantics of file locator. For example, the value of file locator may be an HTML ID in an HTML file, line number in a text file) or a bookmark in a PDF file.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#information">information</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="fileReference">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>fileReference</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>File Reference</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>TXTDSC</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The file name of an externally referenced text file.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#information">information</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="headline">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>headline</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Headline</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Words set at the head of a passage or page to introduce or categorize.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#information">information</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="internationalChartAffected">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>internationalChartAffected</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>International Chart Affected</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>International paper chart number. (Not used if chartAffected carry an ENC name).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#affectedChartPublications">affectedChartPublications</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="intService">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>intService</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Int Service</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>An indication of an international service, true = yes, false = no.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>boolean</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="language">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>language</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Language</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>The language is encoded by a 3 character code following ISO 639-2/T.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#affectedChartPublications">affectedChartPublications</a></td>
+</tr>
+<tr>
+<td><a href="#featureName">featureName</a></td>
+</tr>
+<tr>
+<td><a href="#information">information</a></td>
+</tr>
+<tr>
+<td><a href="#locationName">locationName</a></td>
+</tr>
+<tr>
+<td><a href="#nAVWARNTitle">nAVWARNTitle</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="lastNoticeDate">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>lastNoticeDate</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Last Notice Date</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Date of the last notice to mariner, such as was applied to a chart or publication.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>date</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#chartAffected">chartAffected</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="localityIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>localityIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Locality Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Globally unique identifier for the area or locality in the MRN format.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>URN</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#generalArea">generalArea</a></td>
+</tr>
+<tr>
+<td><a href="#locality">locality</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="name">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>name</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>OBJNAM</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The individual name of a feature.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureName">featureName</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="nameOfSeries">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>nameOfSeries</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Name of Series</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The NAVAREA or METAREA. Example: NAVAREA IV. Distinction: generalArea, locality</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="nameUsage">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>nameUsage</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Name Usage</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Classification of the type and display level of the name of a feature in an end-use system.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>enumeration</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Default Name Display</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Alternate Name Display</td>
+</tr>
+<tr>
+<td>3</td>
+<td>No Chart Display</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureName">featureName</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="navwarnTypeDetails">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>navwarnTypeDetails</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Navwarn Type Details</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Detailed type of a warning or hazard.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>S100_CodeList</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Acoustic Recorder</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AIS Temporary Establishment</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AIS Transmitter Establishment</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AIS Transmitter Operating Properly</td>
+</tr>
+<tr>
+<td>5</td>
+<td>AIS Transmitter Out Of Service</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AIS Transmitter Removal</td>
+</tr>
+<tr>
+<td>7</td>
+<td>AIS Transmitter Temporary Removal</td>
+</tr>
+<tr>
+<td>8</td>
+<td>AIS Transmitter Unreliable</td>
+</tr>
+<tr>
+<td>9</td>
+<td>All Aids To Navigation Unreliable</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Anti Pollution Exercise</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Anti Pollution Operation</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Aquaculture Site</td>
+</tr>
+<tr>
+<td>13</td>
+<td>AtoN Operating Properly</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Audible Signal Change</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Audible Signal Establishment</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Audible Signal Operating Properly</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Audible Signal Out Of Service</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Audible Signal Removal</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Audible Signal Temporary Change</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Audible Signal Temporary Establishment</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Audible Signal Temporary Removal</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Authorized Ice Routeing Information</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Beacon Change</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Beacon Damaged</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Beacon Daymark Unreliable</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Beacon Establishment</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Beacon Missing</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Beacon Removal</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Beacon Restored To Normal</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Beacon Temporary Change</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Beacon Temporary Establishment</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Beacon Temporary Removal</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Beacon Topmark Damaged</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Beacon Topmark Missing</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Blasting Operation</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Breakwater Construction</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Bridge Horizontal Clearance Change</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Bridge Unable To Close</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Bridge Unable To Open</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Bridge Vertical Clearance Change</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Buoy Adrift</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Buoy Change</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Buoy Commissioned for Navigation Season</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Buoy Damaged</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Buoy Daymark Unreliable</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Buoy Decommissioned for Winter</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Buoy Destroyed</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Buoy Establishment</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Buoy Missing</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Buoy Move</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Buoy off Position</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Buoy Re-established</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Buoy Removal</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Buoy Replaced by Winter Spar</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Buoy Restored to Normal</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Buoy Temporary Change</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Buoy Temporary Establishment</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Buoy Temporary Removal</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Buoy Topmark Damaged</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Buoy Topmark Missing</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Buoy Will Be Withdrawn</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Buoy Withdrawn</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Buoy Withdrawn for Winter</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Cable Laying Operation</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Cable Operations</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Chayka Operating Properly</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Chayka Out Of Service</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Chayka Station Removal</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Chayka Station Temporary Removal</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Chayka Unreliable</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Cluster of Fishing Vessels</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Container Adrift</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Dangerous Wreck</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Dead Whale Adrift</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Deadhead Adrift</td>
+</tr>
+<tr>
+<td>76</td>
+<td>Derelict Vessel Adrift</td>
+</tr>
+<tr>
+<td>77</td>
+<td>DGLONASS Operating Properly</td>
+</tr>
+<tr>
+<td>78</td>
+<td>DGLONASS Out Of Service</td>
+</tr>
+<tr>
+<td>79</td>
+<td>DGLONASS Station Establishment</td>
+</tr>
+<tr>
+<td>80</td>
+<td>DGLONASS Unreliable</td>
+</tr>
+<tr>
+<td>81</td>
+<td>DGPS Operating Properly</td>
+</tr>
+<tr>
+<td>82</td>
+<td>DGPS Out Of Service</td>
+</tr>
+<tr>
+<td>83</td>
+<td>DGPS Station Establishment</td>
+</tr>
+<tr>
+<td>84</td>
+<td>DGPS Station Removal</td>
+</tr>
+<tr>
+<td>85</td>
+<td>DGPS Station Temporary Removal</td>
+</tr>
+<tr>
+<td>86</td>
+<td>DGPS Unreliable</td>
+</tr>
+<tr>
+<td>87</td>
+<td>Diving Operation</td>
+</tr>
+<tr>
+<td>88</td>
+<td>Dock Adrift</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Dredging Operation</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Drill Rig Under Tow</td>
+</tr>
+<tr>
+<td>91</td>
+<td>Drilling Site Operations</td>
+</tr>
+<tr>
+<td>92</td>
+<td>E-Chayka Operating Properly</td>
+</tr>
+<tr>
+<td>93</td>
+<td>E-Chayka Out Of Service</td>
+</tr>
+<tr>
+<td>94</td>
+<td>E-Chayka Station Establishment</td>
+</tr>
+<tr>
+<td>95</td>
+<td>E-Chayka Station Removal</td>
+</tr>
+<tr>
+<td>96</td>
+<td>E-Chayka Station Temporary Removal</td>
+</tr>
+<tr>
+<td>97</td>
+<td>E-Chayka Unreliable</td>
+</tr>
+<tr>
+<td>98</td>
+<td>EGC MSI Service</td>
+</tr>
+<tr>
+<td>99</td>
+<td>EGNOS Operating Properly</td>
+</tr>
+<tr>
+<td>100</td>
+<td>EGNOS Out Of Service</td>
+</tr>
+<tr>
+<td>101</td>
+<td>EGNOS Station Establishment</td>
+</tr>
+<tr>
+<td>102</td>
+<td>EGNOS Station Removal</td>
+</tr>
+<tr>
+<td>103</td>
+<td>EGNOS Station Temporary Removal</td>
+</tr>
+<tr>
+<td>104</td>
+<td>EGNOS Unreliable</td>
+</tr>
+<tr>
+<td>105</td>
+<td>ELORAN Operating Properly</td>
+</tr>
+<tr>
+<td>106</td>
+<td>ELORAN Out Of Service</td>
+</tr>
+<tr>
+<td>107</td>
+<td>ELORAN Station Establishment</td>
+</tr>
+<tr>
+<td>108</td>
+<td>ELORAN Station Removal</td>
+</tr>
+<tr>
+<td>109</td>
+<td>ELORAN Station Temporary Removal</td>
+</tr>
+<tr>
+<td>110</td>
+<td>ELORAN Unreliable</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Exclusion Zone</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Explosive Device</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Fairway Marker - Light Not Synchronized</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Fairway Marker - Light Unlit</td>
+</tr>
+<tr>
+<td>115</td>
+<td>Fairway Marker - Light Unreliable</td>
+</tr>
+<tr>
+<td>116</td>
+<td>Fairway Marker Damaged</td>
+</tr>
+<tr>
+<td>117</td>
+<td>Fairway Marker Destroyed</td>
+</tr>
+<tr>
+<td>118</td>
+<td>Fallout Hazard</td>
+</tr>
+<tr>
+<td>119</td>
+<td>Fireworks</td>
+</tr>
+<tr>
+<td>120</td>
+<td>Firing Exercise</td>
+</tr>
+<tr>
+<td>121</td>
+<td>Fish Aggregating Device</td>
+</tr>
+<tr>
+<td>122</td>
+<td>Fishing Net Adrift</td>
+</tr>
+<tr>
+<td>123</td>
+<td>Floating Debris</td>
+</tr>
+<tr>
+<td>124</td>
+<td>Floodlit Beacon - Unlit</td>
+</tr>
+<tr>
+<td>125</td>
+<td>Fog Signal Change</td>
+</tr>
+<tr>
+<td>126</td>
+<td>Fog Signal Establishment</td>
+</tr>
+<tr>
+<td>127</td>
+<td>Fog Signal Operating Properly</td>
+</tr>
+<tr>
+<td>128</td>
+<td>Fog Signal Out Of Service</td>
+</tr>
+<tr>
+<td>129</td>
+<td>Fog Signal Removal</td>
+</tr>
+<tr>
+<td>130</td>
+<td>Fog Signal Temporary Change</td>
+</tr>
+<tr>
+<td>131</td>
+<td>Fog Signal Temporary Establishment</td>
+</tr>
+<tr>
+<td>132</td>
+<td>Fog Signal Temporary Removal</td>
+</tr>
+<tr>
+<td>133</td>
+<td>Front and Rear Lights out of Synchronization</td>
+</tr>
+<tr>
+<td>134</td>
+<td>Front Beacon Restored to Normal</td>
+</tr>
+<tr>
+<td>135</td>
+<td>Front Beacon Unreliable</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Front Light is Operating Properly</td>
+</tr>
+<tr>
+<td>137</td>
+<td>Front Light Range Reduced</td>
+</tr>
+<tr>
+<td>138</td>
+<td>Front Light Unlit</td>
+</tr>
+<tr>
+<td>139</td>
+<td>Front Light Unreliable</td>
+</tr>
+<tr>
+<td>140</td>
+<td>Front Light Without Rhythm</td>
+</tr>
+<tr>
+<td>141</td>
+<td>GNSS Degradation</td>
+</tr>
+<tr>
+<td>142</td>
+<td>Hazardous Area</td>
+</tr>
+<tr>
+<td>143</td>
+<td>HF Service</td>
+</tr>
+<tr>
+<td>144</td>
+<td>High Water Level</td>
+</tr>
+<tr>
+<td>145</td>
+<td>Horizontal Clearance Reduced</td>
+</tr>
+<tr>
+<td>146</td>
+<td>Hydrographic Survey Activity</td>
+</tr>
+<tr>
+<td>147</td>
+<td>Ice Boom - Installation or Removal</td>
+</tr>
+<tr>
+<td>148</td>
+<td>Ice Control Zone In-Force or Deactivated</td>
+</tr>
+<tr>
+<td>149</td>
+<td>Iceberg Outside Advertised Limits</td>
+</tr>
+<tr>
+<td>150</td>
+<td>Jamming Exercise</td>
+</tr>
+<tr>
+<td>151</td>
+<td>Light Buoy - Light Damaged</td>
+</tr>
+<tr>
+<td>152</td>
+<td>Light Buoy - Light Not Synchronized</td>
+</tr>
+<tr>
+<td>153</td>
+<td>Light Buoy - Light Unlit</td>
+</tr>
+<tr>
+<td>154</td>
+<td>Light Buoy - Light Unreliable</td>
+</tr>
+<tr>
+<td>155</td>
+<td>Light Change</td>
+</tr>
+<tr>
+<td>156</td>
+<td>Light Daymark Unreliable</td>
+</tr>
+<tr>
+<td>157</td>
+<td>Light Establishment</td>
+</tr>
+<tr>
+<td>158</td>
+<td>Light Operating Properly</td>
+</tr>
+<tr>
+<td>159</td>
+<td>Light Out Of Synchronization</td>
+</tr>
+<tr>
+<td>160</td>
+<td>Light Range Reduced</td>
+</tr>
+<tr>
+<td>161</td>
+<td>Light Re-Establishment</td>
+</tr>
+<tr>
+<td>162</td>
+<td>Light Removal</td>
+</tr>
+<tr>
+<td>163</td>
+<td>Light Spar Buoy - Light Damaged</td>
+</tr>
+<tr>
+<td>164</td>
+<td>Light Spar Buoy - Light Not Synchronized</td>
+</tr>
+<tr>
+<td>165</td>
+<td>Light Spar Buoy - Light Unlit</td>
+</tr>
+<tr>
+<td>166</td>
+<td>Light Spar Buoy - Light Unreliable</td>
+</tr>
+<tr>
+<td>167</td>
+<td>Light Temporary Change</td>
+</tr>
+<tr>
+<td>168</td>
+<td>Light Temporary Establishment</td>
+</tr>
+<tr>
+<td>169</td>
+<td>Light Temporary Removal</td>
+</tr>
+<tr>
+<td>170</td>
+<td>Light Unlit</td>
+</tr>
+<tr>
+<td>171</td>
+<td>Light Unreliable</td>
+</tr>
+<tr>
+<td>172</td>
+<td>Light Without Rhythm</td>
+</tr>
+<tr>
+<td>173</td>
+<td>Lighted Beacon - Light Damaged</td>
+</tr>
+<tr>
+<td>174</td>
+<td>Lighted Beacon - Light Not Synchronized</td>
+</tr>
+<tr>
+<td>175</td>
+<td>Lighted Beacon - Light Unlit</td>
+</tr>
+<tr>
+<td>176</td>
+<td>Lighted Beacon - Light Unreliable</td>
+</tr>
+<tr>
+<td>177</td>
+<td>Local Health Authority Notice</td>
+</tr>
+<tr>
+<td>178</td>
+<td>Lock Closed</td>
+</tr>
+<tr>
+<td>179</td>
+<td>Log Adrift</td>
+</tr>
+<tr>
+<td>180</td>
+<td>Log Boom Adrift</td>
+</tr>
+<tr>
+<td>181</td>
+<td>LORAN C - Operating Properly</td>
+</tr>
+<tr>
+<td>182</td>
+<td>LORAN C - Out Of Service</td>
+</tr>
+<tr>
+<td>183</td>
+<td>LORAN C - Unreliable</td>
+</tr>
+<tr>
+<td>184</td>
+<td>LORAN C Station Removal</td>
+</tr>
+<tr>
+<td>185</td>
+<td>LORAN C Station Temporary Removal</td>
+</tr>
+<tr>
+<td>186</td>
+<td>Low Water Level</td>
+</tr>
+<tr>
+<td>187</td>
+<td>Marine Aids to Navigation Unreliable</td>
+</tr>
+<tr>
+<td>188</td>
+<td>Maritime Security Level Changes</td>
+</tr>
+<tr>
+<td>189</td>
+<td>MF Service</td>
+</tr>
+<tr>
+<td>190</td>
+<td>Military Exercise</td>
+</tr>
+<tr>
+<td>191</td>
+<td>Military Operation</td>
+</tr>
+<tr>
+<td>192</td>
+<td>MSI Service</td>
+</tr>
+<tr>
+<td>193</td>
+<td>National Health Authority Notice</td>
+</tr>
+<tr>
+<td>194</td>
+<td>NAVTEX Service Change</td>
+</tr>
+<tr>
+<td>195</td>
+<td>New or Amended Regulation</td>
+</tr>
+<tr>
+<td>196</td>
+<td>Numerous Fishing Vessels</td>
+</tr>
+<tr>
+<td>197</td>
+<td>Object Adrift</td>
+</tr>
+<tr>
+<td>198</td>
+<td>Offshore Rigs or Platform Changes</td>
+</tr>
+<tr>
+<td>199</td>
+<td>Opening or Closing of Harbour</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Opening or Closing of Swing Bridge</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Opening or Closing of Waters</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Pipe Laying Operation</td>
+</tr>
+<tr>
+<td>203</td>
+<td>Pipe Operations</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Presence of Long Fishing Gear</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Presence of Marine Mammals</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Presence of Naval Mines</td>
+</tr>
+<tr>
+<td>207</td>
+<td>Presence of Submerged Fishing Net</td>
+</tr>
+<tr>
+<td>208</td>
+<td>Presence of Scientific Equipment</td>
+</tr>
+<tr>
+<td>209</td>
+<td>RACON Change</td>
+</tr>
+<tr>
+<td>210</td>
+<td>RACON Establishment</td>
+</tr>
+<tr>
+<td>211</td>
+<td>RACON Operating Properly</td>
+</tr>
+<tr>
+<td>212</td>
+<td>RACON Out Of Service</td>
+</tr>
+<tr>
+<td>213</td>
+<td>RACON Removal</td>
+</tr>
+<tr>
+<td>214</td>
+<td>RACON Temporary Change</td>
+</tr>
+<tr>
+<td>215</td>
+<td>RACON Temporary Establishment</td>
+</tr>
+<tr>
+<td>216</td>
+<td>RACON Temporary Removal</td>
+</tr>
+<tr>
+<td>217</td>
+<td>RACON Unreliable</td>
+</tr>
+<tr>
+<td>218</td>
+<td>Radar Surveillance System Service Change</td>
+</tr>
+<tr>
+<td>219</td>
+<td>RAMARK Change</td>
+</tr>
+<tr>
+<td>220</td>
+<td>RAMARK Establishment</td>
+</tr>
+<tr>
+<td>221</td>
+<td>RAMARK Operating Properly</td>
+</tr>
+<tr>
+<td>222</td>
+<td>RAMARK Out Of Service</td>
+</tr>
+<tr>
+<td>223</td>
+<td>RAMARK removal</td>
+</tr>
+<tr>
+<td>224</td>
+<td>RAMARK Temporary Change</td>
+</tr>
+<tr>
+<td>225</td>
+<td>RAMARK Temporary Establishment</td>
+</tr>
+<tr>
+<td>226</td>
+<td>RAMARK Temporary Removal</td>
+</tr>
+<tr>
+<td>227</td>
+<td>RAMARK Unreliable</td>
+</tr>
+<tr>
+<td>228</td>
+<td>Rear Beacon Restored to Normal</td>
+</tr>
+<tr>
+<td>229</td>
+<td>Rear Beacon Unreliable</td>
+</tr>
+<tr>
+<td>230</td>
+<td>Rear Light is Operating Properly</td>
+</tr>
+<tr>
+<td>231</td>
+<td>Rear Light Range Reduced</td>
+</tr>
+<tr>
+<td>232</td>
+<td>Rear Light Unlit</td>
+</tr>
+<tr>
+<td>233</td>
+<td>Rear Light Unreliable</td>
+</tr>
+<tr>
+<td>234</td>
+<td>Rear Light Without Rhythm</td>
+</tr>
+<tr>
+<td>235</td>
+<td>Regatta or Race</td>
+</tr>
+<tr>
+<td>236</td>
+<td>Renewable Energy Device or Farm Change</td>
+</tr>
+<tr>
+<td>237</td>
+<td>Restricted Area Changes</td>
+</tr>
+<tr>
+<td>238</td>
+<td>Sandspit or Sandbar Change</td>
+</tr>
+<tr>
+<td>239</td>
+<td>SAR Exercise</td>
+</tr>
+<tr>
+<td>240</td>
+<td>SAR Operation</td>
+</tr>
+<tr>
+<td>241</td>
+<td>Scientific Buoy Adrift</td>
+</tr>
+<tr>
+<td>242</td>
+<td>Scientific Moorings</td>
+</tr>
+<tr>
+<td>243</td>
+<td>Scientific Survey</td>
+</tr>
+<tr>
+<td>244</td>
+<td>Sea Trials</td>
+</tr>
+<tr>
+<td>245</td>
+<td>Seaplane Operations</td>
+</tr>
+<tr>
+<td>246</td>
+<td>Seasonal Commissioning Complete</td>
+</tr>
+<tr>
+<td>247</td>
+<td>Seasonal Commissioning in Progress</td>
+</tr>
+<tr>
+<td>248</td>
+<td>Seasonal Decommissioning Complete</td>
+</tr>
+<tr>
+<td>249</td>
+<td>Seasonal Decommissioning in Progress</td>
+</tr>
+<tr>
+<td>250</td>
+<td>Sector Light - Sector Obscured</td>
+</tr>
+<tr>
+<td>251</td>
+<td>Sector Light Change</td>
+</tr>
+<tr>
+<td>252</td>
+<td>Sector Light Temporary Change</td>
+</tr>
+<tr>
+<td>253</td>
+<td>Security Regulation Change</td>
+</tr>
+<tr>
+<td>254</td>
+<td>Seismic Survey Operation</td>
+</tr>
+<tr>
+<td>255</td>
+<td>Shallow Depth Confirmed</td>
+</tr>
+<tr>
+<td>256</td>
+<td>Shallow Depth Reported</td>
+</tr>
+<tr>
+<td>257</td>
+<td>Spar Buoy Adrift</td>
+</tr>
+<tr>
+<td>258</td>
+<td>Spar Buoy Damaged</td>
+</tr>
+<tr>
+<td>259</td>
+<td>Spar Buoy Destroyed</td>
+</tr>
+<tr>
+<td>260</td>
+<td>Spar Buoy Missing</td>
+</tr>
+<tr>
+<td>261</td>
+<td>Spar Buoy Move</td>
+</tr>
+<tr>
+<td>262</td>
+<td>Spar Buoy off Position</td>
+</tr>
+<tr>
+<td>263</td>
+<td>Spar Buoy Re-established</td>
+</tr>
+<tr>
+<td>264</td>
+<td>Spar Buoy Restored to Normal</td>
+</tr>
+<tr>
+<td>265</td>
+<td>Spar Buoy Topmark Missing</td>
+</tr>
+<tr>
+<td>266</td>
+<td>Spar Buoy Withdrawn</td>
+</tr>
+<tr>
+<td>267</td>
+<td>Storm Surge</td>
+</tr>
+<tr>
+<td>268</td>
+<td>Submarine Cable Changes</td>
+</tr>
+<tr>
+<td>269</td>
+<td>Submarine Pipeline Changes</td>
+</tr>
+<tr>
+<td>270</td>
+<td>Submerged Object</td>
+</tr>
+<tr>
+<td>271</td>
+<td>Subsurface Mooring</td>
+</tr>
+<tr>
+<td>272</td>
+<td>Swimmers</td>
+</tr>
+<tr>
+<td>273</td>
+<td>Temporary Buoyage</td>
+</tr>
+<tr>
+<td>274</td>
+<td>Tide Gauge Change</td>
+</tr>
+<tr>
+<td>275</td>
+<td>Traffic Congestion</td>
+</tr>
+<tr>
+<td>276</td>
+<td>Tsunami Warning</td>
+</tr>
+<tr>
+<td>277</td>
+<td>Uncharted Rock</td>
+</tr>
+<tr>
+<td>278</td>
+<td>Underwater Operations</td>
+</tr>
+<tr>
+<td>279</td>
+<td>Unidentified Radar Target - Possible Iceberg</td>
+</tr>
+<tr>
+<td>280</td>
+<td>Unwieldy Tow</td>
+</tr>
+<tr>
+<td>281</td>
+<td>V-AIS Change</td>
+</tr>
+<tr>
+<td>282</td>
+<td>V-AIS Establishment</td>
+</tr>
+<tr>
+<td>283</td>
+<td>V-AIS Operating Properly</td>
+</tr>
+<tr>
+<td>284</td>
+<td>V-AIS Out Of Service</td>
+</tr>
+<tr>
+<td>285</td>
+<td>V-AIS Removal</td>
+</tr>
+<tr>
+<td>286</td>
+<td>V-AIS Temporary Change</td>
+</tr>
+<tr>
+<td>287</td>
+<td>V-AIS Temporary Establishment</td>
+</tr>
+<tr>
+<td>288</td>
+<td>V-AIS Temporary Removal</td>
+</tr>
+<tr>
+<td>289</td>
+<td>V-AIS Unreliable</td>
+</tr>
+<tr>
+<td>290</td>
+<td>Vertical Clearance Reduced</td>
+</tr>
+<tr>
+<td>291</td>
+<td>Vessel Adrift</td>
+</tr>
+<tr>
+<td>292</td>
+<td>Vessel Disabled</td>
+</tr>
+<tr>
+<td>293</td>
+<td>VHF Service Change</td>
+</tr>
+<tr>
+<td>294</td>
+<td>Volcano Activity</td>
+</tr>
+<tr>
+<td>295</td>
+<td>VTS Change</td>
+</tr>
+<tr>
+<td>296</td>
+<td>Waterway Recommended or Not Recommended For Shipping</td>
+</tr>
+<tr>
+<td>297</td>
+<td>Wharf Construction</td>
+</tr>
+<tr>
+<td>298</td>
+<td>Works in Progress</td>
+</tr>
+<tr>
+<td>299</td>
+<td>World Health Organization Notice</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#warningInformation">warningInformation</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="navwarnTypeGeneral">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>navwarnTypeGeneral</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Navwarn Type General</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>General type of a navigational warning or navigational hazard.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>S100_CodeList</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Aids to Navigation Changes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aquaculture and Fishing Installations</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Drifting Hazards</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ECDIS Operating Anomalies including Official Data Issues</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Other Hazards</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Health Advisories</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ice Information</td>
+</tr>
+<tr>
+<td>8</td>
+<td>In-Force Bulletin</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Dangerous Natural Phenomena</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Newly Discovered Dangers</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Offshore Infrastructure</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Piracy or Robbery</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Communication or Broadcast Service Change</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Routeing Change</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Scientific Instruments Change</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Security Requirement Change</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Special Operations</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Towing Operations</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Works</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Rig List</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="noMessageOnHand">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>noMessageOnHand</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>No Message On Hand</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>An indication of no active message.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>boolean</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#References">References</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="publicationAffected">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>publicationAffected</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Publication Affected</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Name of affected publication.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#affectedChartPublications">affectedChartPublications</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="publicationTime">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>publicationTime</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Publication Time</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Date and time of publication of the notice or warning.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>dateTime</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="referenceCategory">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>referenceCategory</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Reference Category</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Category of reference.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>enumeration</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Warning Cancellation</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Warning Reference</td>
+</tr>
+<tr>
+<td>3</td>
+<td>In-Force</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#References">References</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="restriction">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>restriction</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Restriction</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>RESTRN</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The official legal statute of each kind of restricted area.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>Defines the kind of restriction(s), for example, the restriction for &amp;apos;a game preserve&amp;apos; may be &amp;apos;entry prohibited&amp;apos;, the restriction for an &amp;apos;anchoring prohibition&amp;apos; is &amp;apos;anchoring prohibited&amp;apos;. The complete information about the restriction(s), actually held in handbooks or other publications, may be encoded using an Information type.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>enumeration</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Anchoring Prohibited</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Anchoring Restricted</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Fishing Prohibited</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Fishing Restricted</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Trawling Prohibited</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Trawling Restricted</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Entry Prohibited</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Entry Restricted</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Dredging Prohibited</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Dredging Restricted</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Diving Prohibited</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Diving Restricted</td>
+</tr>
+<tr>
+<td>13</td>
+<td>No Wake</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Area To Be Avoided</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Construction Prohibited</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Discharging Prohibited</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Discharging Restricted</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Industrial or Mineral Exploration/Development Prohibited</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Industrial or Mineral Exploration/Development Restricted</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Drilling Prohibited</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Drilling Restricted</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Removal of Historical Artefacts Prohibited</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Cargo Transhipment (Lightening) Prohibited</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Dragging Prohibited</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Stopping Prohibited</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Landing Prohibited</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Speed Restricted</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Overtaking Prohibited</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Overtaking of Convoys by Convoys Prohibited</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Passing or Overtaking Prohibited</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Berthing Prohibited</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Berthing Restricted</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Making Fast Prohibited</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Making Fast Restricted</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Turning Prohibited</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Restricted Fairway Depth</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Restricted Fairway Width</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Use of Spuds Prohibited</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Swimming Prohibited</td>
+</tr>
+<tr>
+<td>40</td>
+<td>SOx Emission Restricted</td>
+</tr>
+<tr>
+<td>41</td>
+<td>NOx Emission Restricted</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a> include(7,8,14,25,27)</td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="scaleMinimum">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>scaleMinimum</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Scale Minimum</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>SCAMIN</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The minimum scale at which the feature may be used for example for ECDIS presentation.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>The modulus of the scale is indicated, that is 1:1 250 000 is encoded as 1250000.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>integer</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="text">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>text</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>INFORM; NINFOM</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>A non-formatted digital text string.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>Should be used, for example, to hold the information that is for short cautionary or explanatory notes. Therefore, text populated in text must not exceed 300 characters. Text may be in English, or in a national language. No formatting of text is possible within text. If formatted text, or text strings exceeding 300 characters, is required, then an alternate concept should be used.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#information">information</a></td>
+</tr>
+<tr>
+<td><a href="#locationName">locationName</a></td>
+</tr>
+<tr>
+<td><a href="#nAVWARNTitle">nAVWARNTitle</a></td>
+</tr>
+</div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="textOffsetBearing">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>textOffsetBearing</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text Offset Bearing</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The angular distance measured from true north that text associated with a feature is positioned from the feature in an end-user system.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>integer</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="textOffsetDistance">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>textOffsetDistance</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text Offset Distance</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The distance that text associated with a feature is positioned from the feature in an end-user system.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>integer</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="textRotation">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>textRotation</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text Rotation</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>A statement that expresses if text associated with a feature is to be rotated in the ECDIS display or not.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>boolean</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="textType">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>textType</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text Type</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The attribute from which a text string is derived.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>enumeration</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Light Characteristic</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="updateNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>updateNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Update Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Update number of the ENC being referenced.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>text</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#eNCFeatureReference">eNCFeatureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="warningIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>warningIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Warning Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Globally unique identifier of a navigational warning in the MRN format.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>URN</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="warningNumber">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>warningNumber</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Warning Number</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The consecutive number re-starts each calendar year at 1 (Leading zeros are not mandatory).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>integer</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="warningType">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>warningType</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Warning Type</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The scope of the MSI warning - NAVAREA, sub-area, etc.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>enumeration</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<th class="valueCode">Code</th>
+<th class="valueLabel">Label</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Local Navigational Warning</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Coastal Navigational Warning</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sub-Area Navigational Warning</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NAVAREA Navigational Warning</td>
+</tr>
+<tr>
+<td>5</td>
+<td>NAVAREA No Warning</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sub-Area No Warning</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Coastal No Warning</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Local No Warning</td>
+</tr>
+<tr>
+<td>9</td>
+<td>NAVAREA In-Force Bulletin</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sub-Area In-Force Bulletin</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Coastal In-Force Bulletin</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Local In-Force Bulletin</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="year">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>year</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Year</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>A period of one revolution of the earth around the sun.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>integer</td>
+<td></td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#messageSeriesIdentifier">messageSeriesIdentifier</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div><br><br><h2 id="complex">Complex Attributes</h2>
+<div class="complex">
+<table>
+<caption>Complex Attributes</caption>
+<tr>
+<th>Identity</th>
+<th>Attributes</th>
+<th>UsedBy</th>
+</tr>
+<tr id="affectedChartPublications">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>affectedChartPublications</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Affected Chart Publications</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Identifies paper charts, ENCs or publications that are affected by the information.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#chartAffected">chartAffected</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#chartPublicationIdentifier">chartPublicationIdentifier</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#internationalChartAffected">internationalChartAffected</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#language">language</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#publicationAffected">publicationAffected</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="chartAffected">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>chartAffected</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Chart Affected</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Name or number of affected national paper chart or ENC.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#chartNumber">chartNumber</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#editionDate">editionDate</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#chartPlanNumber">chartPlanNumber</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#lastNoticeDate">lastNoticeDate</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#affectedChartPublications">affectedChartPublications</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="dateTimeRange">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>dateTimeRange</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Date Time Range</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The range of time a feature is valid for.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#dateTimeEnd">dateTimeEnd</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#dateTimeStart">dateTimeStart</a> [1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureReference">featureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="eNCFeatureReference">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>eNCFeatureReference</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>ENC Feature Reference</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Reference to feature(s) in an ENC dataset.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#editionNumber">editionNumber</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#eNCName">eNCName</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#featureObjectIdentifier">featureObjectIdentifier</a> [1..99]</td>
+</tr>
+<tr>
+<td><a href="#updateNumber">updateNumber</a> [1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#featureReference">featureReference</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="featureName">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>featureName</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Feature Name</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Provides the name of an entity, defines the national language of the name, and provides the option to display the name at various system display settings.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#language">language</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#name">name</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#nameUsage">nameUsage</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="featureReference">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>featureReference</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Feature Reference</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Reference to an object or feature that is external to the dataset.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#dateTimeRange">dateTimeRange</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#atoNNumber">atoNNumber</a> [0..99]</td>
+</tr>
+<tr>
+<td><a href="#eNCFeatureReference">eNCFeatureReference</a> [0..99]</td>
+</tr>
+<tr>
+<td><a href="#featureIdentifier">featureIdentifier</a> [0..99]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="fixedDateRange">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>fixedDateRange</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Fixed Date Range</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>An active period of a single fixed event or occurrence, as the date range between discrete start and end dates.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>Dates must be encoded in the format YYYYMMDD; using 4 digits for the calendar year (YYYY) and, optionally, 2 digits for the month (MM) (for example April = 04) and 2 digits for the day (DD). When no specific month and/or day is required/known, the values are replaced with dashes (-). The date range of a recurring event or occurrence must be encoded using periodicDateRange.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#dateEnd">dateEnd</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#dateStart">dateStart</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="generalArea">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>generalArea</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>General Area</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>The general area used to identify which broad geographic region the message affects. The geographical name which is selected for the general area should be one that can be found on charts and in nautical publications. (S-53, 6).</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#locationName">locationName</a> [1..99]</td>
+</tr>
+<tr>
+<td><a href="#localityIdentifier">localityIdentifier</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="information">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>information</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Information</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td>INFORM</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Textual information about the feature. The information may be provided as a string of text or as a file name of a single external text file that contains the text.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td>At least one of the sub-attributes file reference or text must be populated.The sub-attribute file reference is generally used for long text strings or those that require formatting, however, there is no restriction on the type of text (except for lexical level) that can be held in files referenced by sub-attribute file reference.</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#fileLocator">fileLocator</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#fileReference">fileReference</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#headline">headline</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#language">language</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#text">text</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#warningInformation">warningInformation</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="locality">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>locality</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Locality</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Name and/or identifier of an area locality.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#locationName">locationName</a> [1..99]</td>
+</tr>
+<tr>
+<td><a href="#localityIdentifier">localityIdentifier</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="locationName">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>locationName</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Location Name</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Name of an area locality as defined by a competent authority.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#text">text</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#language">language</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex">
+<tr>
+<td><a href="#generalArea">generalArea</a></td>
+</tr>
+<tr>
+<td><a href="#locality">locality</a></td>
+</tr>
+</div>
+<div class="feature"></div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="messageSeriesIdentifier">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>messageSeriesIdentifier</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Message Series Identifier</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Message series identification of the warning or notice.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#agencyResponsibleForProduction">agencyResponsibleForProduction</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#nameOfSeries">nameOfSeries</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#warningNumber">warningNumber</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#warningType">warningType</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#year">year</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#countryName">countryName</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#warningIdentifier">warningIdentifier</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+<tr>
+<td><a href="#References">References</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="nAVWARNTitle">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>nAVWARNTitle</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>NAVWARN Title</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Title of the navigational warning.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#text">text</a> [1]</td>
+</tr>
+<tr>
+<td><a href="#language">language</a> [0..1]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+<tr id="warningInformation">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>warningInformation</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Warning Information</td>
+</tr>
+<tr>
+<td>alias:</td>
+<td></td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Detailed information about a warning.</td>
+</tr>
+<tr>
+<td>remarks:</td>
+<td></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<tr>
+<td><a href="#information">information</a> [0..1]</td>
+</tr>
+<tr>
+<td><a href="#navwarnTypeDetails">navwarnTypeDetails</a> [0..99]</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="values">
+<table>
+<div class="complex"></div>
+<div class="feature">
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</div>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h1>Associations</h1>
+<h2 id="informAssoc">Information Associations</h2>
+<div class="informAssoc">
+<table>
+<caption>Information Associations</caption>
+<tr>
+<th>Identity</th>
+<th>ReferencedBy</th>
+</tr>
+<tr id="NWPreambleContent">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>NWPreambleContent</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>NW Preamble Content</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>roles:</td>
+<td>theWarningPart<br>header</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table></table>
+</div>
+</td>
+</tr>
+<tr id="NWReferences">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>NWReferences</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>NW References</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>roles:</td>
+<td>theWarning<br>theReferences</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table></table>
+</div>
+</td>
+</tr>
+</table>
+</div><br><br><h2 id="featAssoc">Feature Associations</h2>
+<div class="featAssoc">
+<table>
+<caption>Feature Associations</caption>
+<tr>
+<th>Identity</th>
+<th>ReferencedBy</th>
+</tr>
+<tr id="AreaAffected">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>AreaAffected</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Area Affected Association</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Used to indicate an area outside of the geographic area of the associated feature that can nonetheless be influenced by that feature.</td>
+</tr>
+<tr>
+<td>roles:</td>
+<td>affects<br>impacts</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table></table>
+</div>
+</td>
+</tr>
+<tr id="TextAssociation">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>TextAssociation</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>Text association</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>A feature association for the binding between a geo feature and the cartographically positioned location for text.</td>
+</tr>
+<tr>
+<td>roles:</td>
+<td>identifies<br>positions</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table></table>
+</div>
+</td>
+</tr>
+</table>
+</div><br><br><h1>Object Types</h1>
+<h2 id="inform">Information Types</h2>
+<div class="inform">
+<table>
+<caption>Information Types</caption>
+<tr>
+<th>Identity</th>
+<th>ReferencedBy</th>
+</tr>
+<tr id="NAVWARNPreamble">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>NAVWARNPreamble</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>NAVWARN Preamble</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>Preamble information for warnings, notices and other types of messages in a navigational warning scheme.</td>
+</tr>
+<tr>
+<td>attributes:</td>
+<td>
+<div class="attributes attlinks"><a href="#generalArea">generalArea [1..*] Ordered</a><a href="#intService">intService [1]</a><a href="#messageSeriesIdentifier">messageSeriesIdentifier [1]</a><a href="#navwarnTypeGeneral">navwarnTypeGeneral [1]</a><a href="#publicationTime">publicationTime [1]</a><a href="#affectedChartPublications">affectedChartPublications [0..*]</a><a href="#cancellationDate">cancellationDate [0..1]</a><a href="#locality">locality [0..*] Ordered</a><a href="#nAVWARNTitle">nAVWARNTitle [0..*]</a></div>
+</td>
+</tr>
+<tr>
+<th>information links:</th>
+<td>
+<table class="associations">
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>association</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#NWReferences">NWReferences</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>theReferences</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [0..*]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#References">References</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table>
+<tr>
+<td><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr id="References">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<td>code:</td>
+<td>References</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>References</td>
+</tr>
+<tr>
+<td>definition:</td>
+<td>References to for example a navigational warning, nautical publication or chart.</td>
+</tr>
+<tr>
+<td>attributes:</td>
+<td>
+<div class="attributes attlinks"><a href="#noMessageOnHand">noMessageOnHand [1]</a><a href="#referenceCategory">referenceCategory [1]</a><a href="#messageSeriesIdentifier">messageSeriesIdentifier [0..*]</a></div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="referencedBy">
+<table>
+<tr>
+<td><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div><br><br><h2 id="features">Feature Types</h2>
+<div class="feature">
+<table>
+<caption>Feature Types</caption>
+<tr id="NAVWARNAreaAffected">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<th>code:</th>
+<td>NAVWARNAreaAffected</td>
+</tr>
+<tr>
+<th>name:</th>
+<td>NAVWARN Area Affected</td>
+</tr>
+<tr>
+<th>alias:</th>
+<td></td>
+</tr>
+<tr>
+<th>definition:</th>
+<td>Used to enhance the user’s awareness of an affected area following some incident.</td>
+</tr>
+<tr>
+<th>remarks:</th>
+<td></td>
+</tr>
+<tr>
+<th>attributes:</th>
+<td>
+<div class="attributes attlinks"></div>
+</td>
+</tr>
+<tr>
+<th>type:</th>
+<td>geographic</td>
+</tr>
+<tr>
+<th>spatial primitives:</th>
+<td>point, curve, surface</td>
+</tr>
+<tr>
+<th>feature links:</th>
+<td>
+<table class="associations">
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>association</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#AreaAffected">AreaAffected</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>impacts</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [1]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr id="NAVWARNPart">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<th>code:</th>
+<td>NAVWARNPart</td>
+</tr>
+<tr>
+<th>name:</th>
+<td>NAVWARN Part</td>
+</tr>
+<tr>
+<th>alias:</th>
+<td></td>
+</tr>
+<tr>
+<th>definition:</th>
+<td>Navigational warning information that may be geo-located.</td>
+</tr>
+<tr>
+<th>remarks:</th>
+<td></td>
+</tr>
+<tr>
+<th>attributes:</th>
+<td>
+<div class="attributes attlinks"><a href="#warningInformation">warningInformation [1]</a><a href="#featureName">featureName [0..*]</a><a href="#featureReference">featureReference [0..*]</a><a href="#fixedDateRange">fixedDateRange [0..*] Ordered</a><a href="#restriction">restriction [0..1]</a></div>
+</td>
+</tr>
+<tr>
+<th>type:</th>
+<td>geographic</td>
+</tr>
+<tr>
+<th>spatial primitives:</th>
+<td>noGeometry, point, curve, surface</td>
+</tr>
+<tr>
+<th>information links:</th>
+<td>
+<table class="associations">
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>association</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#NWPreambleContent">NWPreambleContent</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>header</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [1]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#NAVWARNPreamble">NAVWARNPreamble</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<th>feature links:</th>
+<td>
+<table class="associations">
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>association</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#AreaAffected">AreaAffected</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>affects</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [0..*]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#NAVWARNAreaAffected">NAVWARNAreaAffected</a></td>
+</tr>
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>association</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#TextAssociation">TextAssociation</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>positions</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [0..*]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#TextPlacement">TextPlacement</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr id="TextPlacement">
+<td>
+<div class="identity">
+<table>
+<col class="identity-col1">
+<col class="identity-col2">
+<tr>
+<th>code:</th>
+<td>TextPlacement</td>
+</tr>
+<tr>
+<th>name:</th>
+<td>Text Placement</td>
+</tr>
+<tr>
+<th>alias:</th>
+<td></td>
+</tr>
+<tr>
+<th>definition:</th>
+<td>The Text Placement feature is used in association with the Feature Name attribute or a light description to optimize text positioning in ECDIS.</td>
+</tr>
+<tr>
+<th>remarks:</th>
+<td></td>
+</tr>
+<tr>
+<th>attributes:</th>
+<td>
+<div class="attributes attlinks"><a href="#textOffsetBearing">textOffsetBearing [1]</a><a href="#textOffsetDistance">textOffsetDistance [1]</a><a href="#scaleMinimum">scaleMinimum [0..1]</a><a href="#text">text [0..1]</a><a href="#textRotation">textRotation [0..1]</a><a href="#textType">textType [0..1]</a></div>
+</td>
+</tr>
+<tr>
+<th>type:</th>
+<td>cartographic</td>
+</tr>
+<tr>
+<th>spatial primitives:</th>
+<td>point</td>
+</tr>
+<tr>
+<th>feature links:</th>
+<td>
+<table class="associations">
+<tr>
+<td class="associationClass">
+<table>
+<tr>
+<th>roletype:</th>
+<td>composition</td>
+</tr>
+<tr>
+<th>association:</th>
+<td><a href="#TextAssociation">TextAssociation</a></td>
+</tr>
+<tr>
+<th>role:</th>
+<td>identifies</td>
+</tr>
+<tr>
+<th>multiplicity:</th>
+<td> [0..1]</td>
+</tr>
+</table>
+</td>
+<td class="links"><a href="#NAVWARNPart">NAVWARNPart</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.iho.s100.xml-bindings</groupId>
+        <artifactId>xml-bindingings-s201-pom</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>s201-1_0_0-xml-bindings</artifactId>
+
+    <packaging>jar</packaging>
+    <name>S-201 1.0.0 XML Bindings</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-maven-plugin</artifactId>
+                <version>${jaxb-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <extension>true</extension>
+                    <bindingIncludes>
+                        <include>xjb/bindings.xjb</include>
+                    </bindingIncludes>
+
+                    <schemaIncludes>
+                        <include>xsd/S-201.xsd</include>
+                    </schemaIncludes>
+
+                    <generateDirectory>${basedir}/src/main/generated/</generateDirectory>
+                    <cleanPackageDirectories>true</cleanPackageDirectories>
+                    <args>
+                        <arg>-Xsimplify</arg>
+                        <arg>-Xannotate</arg>
+                        <arg>-Xsetters</arg>
+                    </args>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugins</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugins-runtime</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugin-annotate</artifactId>
+                        </plugin>
+                    </plugins>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.iho.s100.xml-bindings</groupId>
+            <artifactId>s100-5_2_0-xml-bindings</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+    </dependencies>
+
+</project>
